@@ -6,5 +6,10 @@ $app = new Router;
 
 $app->get('/', function()
 {
-  
+  echo 'main page';
+});
+
+$app->notFound(function()
+{
+  echo '404 Not Found';
 });
