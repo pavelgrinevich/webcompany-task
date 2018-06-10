@@ -6,10 +6,20 @@ $app = new Router;
 
 $app->get('/', function()
 {
-  echo 'main page';
+  include './views/cities/index.php';
+});
+
+$app->get('/users', function()
+{
+  include './views/users/index.php';
+});
+
+$app->get('/search', function()
+{
+  include './views/search/index.php';
 });
 
 $app->notFound(function()
 {
-  echo '404 Not Found';
+  include './views/404.php';
 });
