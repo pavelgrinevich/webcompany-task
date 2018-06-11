@@ -1,6 +1,6 @@
 <?php
 $page = 'cities';
-$body = '<p>cities</p>';
+$counter = include './views/counter/index.php';
+$body = include './views/cities/body.php';
 
-include './views/counter/index.php';
 include './views/template/page.html';

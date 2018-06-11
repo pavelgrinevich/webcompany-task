@@ -4,7 +4,7 @@ use Lib\Visits;
 
 $visits = Visits::get();
 
-$counter = "
+return <<<EOD
   <div class='post'>
     <div class='postheader'></div>
     <div class='postcontent'> 
@@ -14,4 +14,4 @@ $counter = "
       <h3 style='margin-left: 25px;'>Вы посещали эту страницу <b>{$visits[$page]}</b> раз</h3>
     </div>
   </div>
-";
+EOD;

@@ -1,12 +1,15 @@
 <?php
 require_once './lib/router.php';
 require_once './lib/visits.php';
+require_once './lib/mysql.php';
 
 use Lib\Router;
 use Lib\Visits;
+use Lib\DatabaseQuery;
 
 $app = new Router;
 $visits = new Visits;
+$db = new DatabaseQuery;
 
 $app->get('/', function() use ($visits)
 {
