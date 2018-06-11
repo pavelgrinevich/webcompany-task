@@ -35,11 +35,6 @@
         <div id="topnav">
           <ul class="lavaLampWithImage" id="1">
             <?php switch ($page) {
-              case "cities":?>
-                <li class="current"><a href="/">Города</a></li>
-                <li><a href="/users">Пользователи</a></li>
-                <li><a href="search">Поиск</a></li>
-                <?php break;
               case "users":?>
                 <li><a href="/">Города</a></li>
                 <li class="current"><a href="/users">Пользователи</a></li>
@@ -49,13 +44,21 @@
                 <li><a href="/">Города</a></li>
                 <li><a href="/users">Пользователи</a></li>
                 <li class="current"><a href="search">Поиск</a></li>
-                <?php break;}?>
+                <?php break;
+              default:?>
+                <li class="current"><a href="/">Города</a></li>
+                <li><a href="/users">Пользователи</a></li>
+                <li><a href="search">Поиск</a></li>
+              <?php }?>
           </ul>
         </div>
       </div>
       <div id="content">
         <div id="left">
-          <?=$body?>
+          <?php
+            if (isset($counter)) echo $counter;
+            if (isset($body)) echo $body;
+          ?>
         </div>
         <div id="sidebar">
           <h3> <b>Слева рабочая модель.</b></h3>

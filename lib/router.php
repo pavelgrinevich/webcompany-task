@@ -13,7 +13,7 @@ class Router
     $this->uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
   }
 
-  function get($route, $callback)
+  public function get($route, $callback)
   {
     if ($this->method !== 'GET') return;
     if ($this->uri !== $route) return;
@@ -21,7 +21,7 @@ class Router
     $callback();
   }
 
-  function post($route, $callback)
+  public function post($route, $callback)
   {
     if ($this->method !== 'POST') return;
     if ($this->uri !== $route) return;
@@ -29,7 +29,7 @@ class Router
     $callback();
   }
 
-  function notFound($callback)
+  public function notFound($callback)
   {
     if ($this->flagNotFound)
     {
