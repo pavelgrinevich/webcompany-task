@@ -1,12 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Тестовое задание Webcompany</title>
+  <link href="./views/template/css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./views/template/js/jquery-1.1.3.1.min.js"></script>
+  <script type="text/javascript" src="./views/template/js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="./views/template/js/jquery.lavalamp.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#1, #2, #3").lavaLamp({
+        fx: "backout",
+        speed: 700,
+        click: function (event, menuItem) {
+            return true;
+        }
+      });
+    });
+  </script>
+  <link href="./views/template/css/lavalamp.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <?=$body?>
+  <div id="wrap">
+    <div id="topbg"></div>
+    <div id="wrap2">
+      <div id="topbar">
+        <img style="float:left;margin:0 150px 0 20px;height:65px;" src="http://webcompany.by/assets/templates/webcompany/img/webcompany-logo.png" alt="logo"> 
+        <h1 id="sitename"><a href="#">Тестовое задание</a> <span class="description"></span></h1>
+      </div>
+      <div id="header">
+        <div id="headercontent"> </div>
+        <div id="topnav">
+          <ul class="lavaLampWithImage" id="1">
+            <?php switch ($page) {
+              case "cities":?>
+                <li class="current"><a href="/">Города</a></li>
+                <li><a href="/users">Пользователи</a></li>
+                <li><a href="search">Поиск</a></li>
+                <?php break;
+              case "users":?>
+                <li><a href="/">Города</a></li>
+                <li class="current"><a href="/users">Пользователи</a></li>
+                <li><a href="search">Поиск</a></li>
+                <?php break;
+              case "search":?>
+                <li><a href="/">Города</a></li>
+                <li><a href="/users">Пользователи</a></li>
+                <li class="current"><a href="search">Поиск</a></li>
+                <?php break;}?>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div id="left">
+          <?=$body?>
+        </div>
+        <div id="sidebar">
+          <h3> <b>Слева рабочая модель.</b></h3>
+          <h3>Описание тестового задания</h3>
+          <div class='zadanie'>
+            <h4>Общее для всех страниц</h4>
+            <ul>
+              <ol>1 Общий счетчик на сайт</ol>
+              <ol>2 Счетчик на каждую страницу</ol>
+            </ul>
+            <h4>Страница города</h4>
+            <ul>
+              <ol>1 Вывод всех городов</ol>
+              <ol>2 Добавление</ol>
+              <ol>3 Удаление</ol>
+              <ol>4 Редактирование</ol>
+              <ol><b>5 Сортировка</b></ol>
+              <ol>5.1 Выбор направления</ol>
+              <ol>5.2 Выбор поля</ol>
+            </ul>
+            <h4>Страница Пользователи</h4>
+            <ul>
+              <ol>1 Вывод всех Пользователей</ol>
+              <ol>2 Добавление</ol>
+              <ol>3 Удаление</ol>
+              <ol>4 Редактирование</ol>
+              <ol><b>5 Сортировка</b></ol>
+              <ol>5.1 Выбор направления</ol>
+              <ol>5.2 Выбор поля</ol>
+              <ol>6 Фильтр по городам</ol>
+            </ul>
+            <h4>Страница Поиск</h4>
+            <ul>
+              <ol>1 Форма поиска</ol>
+              <ol>2 Поиск по фамилии</ol>
+              <ol>3 Поиск по имени</ol>
+              <ol>4 Вывод результатов</ol>
+            </ul>
+            <h3>Описание связей</h3>
+            <p>
+              Если изменяем название города Орша На Орша1 
+              то у всех пользователей которые были выбрали Орша 
+              Станет так-же Орша1 и во всех списках выбора города будет уже Орша1
+            </p>
+            <h3>Требование при выполнении</h3>
+            <p>
+              <h4>Не использовать фреймворки!!!</h4>
+              <h4>Использовать разбитие кода на функции</h4>
+              <h4>Понятные названия переменных</h4>
+              <h4>Язык прогроммирования серверной части PHP</h4>
+              <h4>Использование $_COOKIE для счетчиков</h4>
+            </p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="footer"> 
+        <div class="credit">Webcompany 2018г</div>
+      </div>
+    </div>
+    <div id="btmbg"></div>
+  </div>
 </body>
 </html>

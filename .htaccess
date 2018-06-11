@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteBase /
-RewriteRule \.(css|js)$ - [L]
+RewriteRule \.(css|js|jpg|png)$ - [L]
 RewriteRule ^(.*)$ app.php
